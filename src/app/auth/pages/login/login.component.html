@@ -1,0 +1,35 @@
+<h1 class="text-center" style="font-weight: 700;" >{{'Inicio De sesión' |titlecase }}</h1>
+<hr>
+
+
+<div class="login mt-5">
+
+
+  <section class="">
+    <img class="imagen" src="/assets/img/undraw_secure_login_pdn4.svg" alt="" srcset="">
+  </section>
+
+  <section class="shadow-dreamy p-5">
+    <h2 class="text-center" >{{'Ingrese sus datos' |titlecase }}</h2>
+    <hr class="mb-5">
+    <form (ngSubmit)="enviarFormulario()" ngNativeValidate class="example-form">
+
+      <mat-form-field class="inputs">
+        <mat-label>Correo</mat-label>
+        <input [(ngModel)]="usuario.email" name="email"  type="email" matInput  placeholder="Ejemplo. pat@example.com">
+
+      </mat-form-field>
+
+      <mat-form-field class="inputs">
+        <mat-label>Contraseña</mat-label>
+        <input [(ngModel)]="usuario.password" name="password"  type="password" matInput >
+
+      </mat-form-field>
+      <a  mat-button  (click)="registro()"  >{{'¿ No tienes cuenta ? Registrate!' | titlecase }}</a>
+      <button  type="submit"   style="margin-top: 15px;" mat-raised-button class="inputs" color="primary">Enviar</button>
+      <div  class="error" *ngIf="error" >Revisa los campos</div>
+    </form>
+  </section>
+
+</div>
+

@@ -1,0 +1,60 @@
+<h1 class="text-center" style="font-weight: 700;" >{{'Registro' |titlecase }}</h1>
+<hr>
+
+
+<div class="login mt-5">
+
+
+  <section class="">
+    <img class="imagen" src="/assets/img/undraw_secure_login_pdn4.svg" alt="" srcset="">
+  </section>
+
+  <section class="shadow-dreamy p-5">
+    <h2 class="text-center" >{{'Ingrese sus datos' |titlecase }}</h2>
+    <hr class="mb-5">
+    <form (ngSubmit)="enviarFormulario()" class="example-form">
+
+
+
+      <mat-form-field class="inputs">
+        <mat-label>Ingrese Su Nombre</mat-label>
+        <input  type="text" matInput [(ngModel)]="usuario.name" name="name" placeholder="Ejemplo. pat@example.com">
+
+      </mat-form-field>
+
+      <mat-form-field class="inputs">
+        <mat-label>Ingrese El Correo</mat-label>
+        <input  type="email" matInput name="email" [(ngModel)]="usuario.email" placeholder="Ejemplo. pat@example.com">
+
+      </mat-form-field>
+
+
+
+      <mat-form-field class="inputs">
+        <mat-label>Ingrese La Contraseña</mat-label>
+        <input  type="password" [(ngModel)]="usuario.password" name="password" matInput >
+
+      </mat-form-field>
+
+      <mat-form-field class="inputs">
+        <mat-label>Repita La Contraseña</mat-label>
+        <input  type="password" [(ngModel)]="usuario.password2" name="password2" matInput >
+
+      </mat-form-field>
+
+
+      <button mat-button (click)="registro()" >{{'¿ Ya tienes cuenta ? Inicia Sesion!' | titlecase }}</button>
+      <button type="submit" style="margin-top: 15px;" mat-raised-button class="inputs" color="primary">Enviar</button>
+      <div  class="error" *ngIf="error" >
+        <ul>
+          <li style="margin-left: 15px;">Las contraseñas deben ser iguales</li>
+          <li style="margin-left: 15px;">Las contraseñas deben tener una longitud de minimo 8 caracteres</li>
+          <li style="margin-left: 15px;">El nombre no puede estar en blanco</li>
+          <li style="margin-left: 15px;">Debe ingresar un correo valido</li>
+        </ul>
+      </div>
+    </form>
+  </section>
+
+</div>
+

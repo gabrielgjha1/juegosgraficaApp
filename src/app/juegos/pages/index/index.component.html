@@ -1,0 +1,43 @@
+<h1 style="text-align: center;" >Listar juegos!</h1>
+<mat-divider></mat-divider>
+
+
+<section *ngIf="mostrarspinner" style="margin: 0 auto;" class="spiner">
+  <mat-spinner></mat-spinner>
+
+</section>
+
+<section *ngIf="!mostrarspinner">
+  <div class="grids" >
+    <mat-card  *ngFor="let item of juegos" class="example-card shadow-dreamy">
+      <mat-card-header>
+
+        <mat-card-title >{{item.nombre}}</mat-card-title>
+        <mat-card-subtitle>Votos: {{item.voto_count}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{item.img}}" alt="Photo of a Shiba Inu">
+
+      <div class="vertical">
+        <div>
+
+          <mat-card-content>
+           <p>
+            {{ item.descripcion |slice:0:180 }}{{item.descripcion.length > 180 ? '...' : ''}}
+           </p>
+         </mat-card-content>
+        </div>
+        <div>
+
+          <mat-card-actions style=" padding: 0; margin: 0;">
+            <button style="width: 100%" mat-raised-button color="primary" (click)="verjuego(item.id)" >Votar</button>
+
+          </mat-card-actions>
+        </div>
+
+     </div>
+
+    </mat-card>
+  </div>
+
+
+</section>

@@ -1,0 +1,59 @@
+<mat-sidenav-container fullscreen >
+  <mat-sidenav #sidenav >
+
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
+
+       <mat-icon>menu</mat-icon>
+     </button>
+     <span>Menu</span>
+
+   </mat-toolbar>
+
+   <mat-nav-list>
+     <a mat-list-item routerLink="">  Inicio </a>
+
+
+     <a mat-list-item  *ngFor="let item of menu" routerLink="{{item.routerLink}}" > <span> {{item.nombre}} </span>  </a>
+
+     <!-- <a ngfo mat-list-item routerLink="listarjuego"> <span> Listar Juego </span>  </a>
+     <a mat-list-item routerLink="listarusuarios"> <span> Listar Usuarios </span>  </a>
+     <a mat-list-item routerLink="crearJuego"> <span> Crear Juegos </span>  </a> -->
+
+     <a mat-list-item routerLink="juegostop"> <span> Mas votados </span>  </a>
+     <a mat-list-item *ngIf="!comprobarlogin"routerLink="registro"> Registro </a>
+     <a mat-list-item *ngIf="comprobarlogin" (click)="CerrarSesion()"> Cerrar Sesion </a>
+   </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content  >
+
+    <p>
+      <mat-toolbar>
+       <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
+
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Juego Del Año</span>
+      <span class="example-spacer"></span>
+
+      <button mat-button routerLink="login" *ngIf="!comprobarlogin" >Inicia sesión</button>
+      <button  mat-button *ngIf="comprobarlogin" >{{nombre | titlecase}}</button>
+
+
+    </mat-toolbar>
+    </p>
+
+
+
+    <section class="container" >
+
+
+      <router-outlet></router-outlet>
+    </section>
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

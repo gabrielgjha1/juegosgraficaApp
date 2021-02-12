@@ -1,0 +1,31 @@
+.login{
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+  flex-wrap: wrap;
+  height: 65vh;
+
+}
+
+.login section {
+
+  width: 45%;
+
+}
+
+.inputs{
+
+  width: 100%;
+
+}
+
+
+.spiner{
+
+  display: flex;
+  justify-content: center;
+
+}

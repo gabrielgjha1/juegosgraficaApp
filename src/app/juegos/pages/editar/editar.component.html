@@ -1,0 +1,69 @@
+<h1 class="text-center" style="font-weight: 700;" >{{'Registrar nuevo juego' |titlecase }}</h1>
+<hr>
+
+
+<div class="login mt-5">
+
+
+  <section class="">
+    <img style="width: 100%;" src="/assets/img/undraw_video_game_night_8h8m.svg" alt="" srcset="">
+  </section>
+
+  <section class="shadow-dreamy p-5">
+    <div *ngIf="!MostrarSpinner" >
+      <h2 class="text-center" >{{'Ingresar datos del juego' |titlecase }}</h2>
+      <hr class="mb-5">
+      <form (ngSubmit)="EnviarFormulario()"   class="example-form">
+
+        <mat-form-field class="inputs">
+
+          <mat-label>{{'Nombre' | titlecase}}</mat-label>
+          <input [(ngModel)]="juego.nombre" [value]="juego.nombre"  name="nombre"  type="text" matInput  placeholder="Ejemplo. Zelda">
+
+        </mat-form-field>
+
+        <mat-form-field class="inputs">
+          <mat-label>{{'Direccion URL' | titlecase}}</mat-label>
+          <input  name="direccion" [(ngModel)]="juego.direccion" type="text" matInput >
+
+        </mat-form-field>
+
+        <mat-form-field class="inputs">
+
+          <mat-label>{{'Descripción' | titlecase}}</mat-label>
+          <input  name="descripcion" [(ngModel)]="juego.descripcion" type="text" matInput  >
+
+        </mat-form-field>
+
+        <mat-form-field class="inputs">
+
+          <mat-label>{{'Precio' | titlecase}}</mat-label>
+          <input  name="precio" [(ngModel)]="juego.precio" type="number" matInput  >
+
+        </mat-form-field>
+
+        <mat-form-field  style="width: 100%;" appearance="fill">
+          <mat-label>{{'Selecciona una categoria' | titlecase}}</mat-label>
+          <mat-select  [(ngModel)]="juego.categoria_id" name ="categoria_id"   >
+            <mat-option   *ngFor="let item of categorias" value="{{item.id}}">{{item.nombre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
+          <input (change)="GuardarImagen($event.target.files[0])" type="file" id="fichero-tarifas" class="input-file" value="">
+          Subir fichero...
+          </div>
+
+        <button  type="submit"   style="margin-top: 15px;" mat-raised-button class="inputs" color="primary">Enviar</button>
+        <div *ngIf="error" class="error" >Revisa los campos</div>
+      </form>
+    </div>
+
+    <div  *ngIf="MostrarSpinner" class="spiner" >
+
+      <mat-spinner></mat-spinner>
+    </div>
+  </section>
+
+</div>
+

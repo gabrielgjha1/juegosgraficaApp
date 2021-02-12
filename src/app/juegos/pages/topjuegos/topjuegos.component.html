@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Juegos Mas votados</h1>
+<mat-divider></mat-divider>
+<div class="grafica" *ngIf="mostrar">
+  <div >
+    <div   style="display: block">
+      <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</div>

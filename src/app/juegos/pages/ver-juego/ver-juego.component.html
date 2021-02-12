@@ -1,0 +1,34 @@
+
+
+<div *ngIf="!mostrarSpinner">
+
+  <h1 style="text-align: center;"  >Categoria: {{juegos.categoria.nombre}}  </h1>
+  <mat-divider></mat-divider>
+  <section >
+
+    <div >
+
+      <img src="{{juegos.img}}" alt="">
+
+
+    </div>
+
+    <div>
+
+      <h2   style="text-align: center; font-size: 24px;">{{juegos.nombre}}</h2>
+      <mat-divider></mat-divider>
+      <h3 style="font-size: 20px; margin-top: 15px;" >Precio: <strong> {{juegos.precio |currency }}  <a href="www.google.com" target="_blank" style="margin-left: 15px;"  mat-stroked-button color="primary">Comprar</a> </strong> </h3>
+      <p style="font-size: 18px;">Cantidad de votos: <strong> {{cantidadVotos}} </strong> </p>
+      <p style="font-size: 18px;">Descripcion: {{juegos.descripcion}}</p>
+
+      <button *ngIf="!comprobar" (click)="realizarvoto(juegos.id)"   mat-raised-button style="width: 100%; margin-bottom: 15px; margin-top: 15px;" color="primary">Votar</button>
+      <button *ngIf="comprobar"  (click)="realizarvoto(juegos.id)"  mat-raised-button style="width: 100%; margin-bottom: 15px; margin-top: 15px;" color="warn">Quitar voto</button>
+    </div>
+
+  </section>
+
+</div>
+
+<div *ngIf="mostrarSpinner" class="spiner">
+  <mat-spinner></mat-spinner>
+</div>

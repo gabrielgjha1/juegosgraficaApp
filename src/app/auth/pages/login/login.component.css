@@ -1,0 +1,52 @@
+.login{
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+  flex-wrap: wrap;
+  height: 65vh;
+
+}
+
+.login section {
+
+  width: 45%;
+
+}
+
+.inputs{
+
+  width: 100%;
+
+}
+
+.imagen{
+
+  width: 100%;
+
+}
+
+@media only screen and (max-width: 792px) {
+  .login{
+    height: 100%;
+
+  }
+  .login section {
+
+
+    width: 100%;
+
+  }
+
+  .imagen{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 30%;
+    text-align: center;
+
+  }
+
+}

@@ -1,0 +1,31 @@
+section{
+
+  display: flex;
+
+  justify-content: space-between;
+ height: 60vh;
+  margin-top: 50px;
+
+}
+
+section div {
+
+  width: 47%;
+
+}
+
+img {
+
+  width: 100%;
+
+}
+
+.spiner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+
+
+}
+
