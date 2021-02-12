@@ -1,7 +1,7 @@
 section{
 
   display: flex;
-
+  flex-wrap: wrap;
   justify-content: space-between;
  height: 60vh;
   margin-top: 50px;
@@ -29,3 +29,48 @@ img {
 
 }
 
+@media only screen and (max-width: 984px) {
+
+  section{
+
+    height: 100%;
+    margin-top: 50px;
+
+  }
+
+  section div {
+
+    width: 100%;
+
+  }
+
+}
+
+
+@media only screen and (max-width: 756px) {
+
+  section{
+
+    height: 100%;
+    margin-top: 50px;
+
+  }
+
+  section div {
+
+    width: 100%;
+
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+  .grids {
+
+    grid-template-columns:  repeat(1,1fr)  ;
+
+
+  }
+}
